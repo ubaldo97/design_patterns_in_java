@@ -8,8 +8,14 @@ public class Main {
         auto.modelo = "Coupe";
 
         System.out.println("El es: "+auto.marca + " "+ auto.modelo+" puertas: "+auto.puertas);
-        Automovil clon = auto.clonar();
-        clon.puertas = 3;
-        System.out.println("El prototipo es : " + clon.marca + " "+ clon.modelo + " puertas: "+ clon.puertas);
+
+        try {
+            Automovil clon = auto.clonar();
+            clon.puertas = 3;
+            System.out.println("El prototipo es : " + clon.marca + " " + clon.modelo + " puertas: " + clon.puertas);
+        }catch (CloneNotSupportedException e){
+            System.out.println("No se puede clonar: "+e.getMessage());
+        }
+
     }
 }
